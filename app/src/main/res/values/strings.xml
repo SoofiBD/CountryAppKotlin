@@ -5,4 +5,8 @@
     <string name="country_capital">Country Capital</string>
     <string name="country_name">Country Name</string>
     <string name="todo">TODO</string>
+    <string name="error">Error!</string>
+    <string name="country_currency">Country Currency</string>
+    <string name="country_language">Country Language</string>
+    <string name="country_region">Country Region</string>
 </resources>

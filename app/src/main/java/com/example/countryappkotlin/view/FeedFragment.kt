@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.example.countryappkotlin.R
+
 import com.example.countryappkotlin.databinding.FragmentFeedBinding
 import com.example.countryappkotlin.viewModel.FeedViewModel
 
@@ -43,11 +43,14 @@ class FeedFragment : Fragment() {
     fun observeLiveData(){
         viewModel.countryLiveData.observe(viewLifecycleOwner) { country ->
             country?.let {
-                binding.countryName.text = country.countryName
-                binding.countryCapital.text = country.countryCapital
-                binding.countryRegion.text = country.countryRegion
-                binding.countryCurrency.text = country.countryCurrency
-                binding.countryLanguage.text = country.countryLanguage
+
+
+
+            //binding.countryName.text = country.countryName
+                //binding.countryCapital.text = country.countryCapital
+                //binding.countryRegion.text = country.countryRegion
+                //binding.countryCurrency.text = country.countryCurrency
+                //binding.countryLanguage.text = country.countryLanguage
                 // Eğer downloadFromUrl ve placeHolderProgressBar fonksiyonları tanımlıysa, bu satırı uygun şekilde düzenleyin.
                 // binding.countryImageView.downloadFromUrl(country.countryImage, placeHolderProgressBar(requireContext()))
             }

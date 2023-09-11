@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,22 +10,24 @@
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
 
+        <!-- Önce argument'ı tanımlayın -->
         <argument
             android:name="countryUuid"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="0" />
 
+        <!-- Sonra action tag'ını kullanın -->
         <action
             android:id="@+id/action_feedFragment_to_countryFragment"
             app:destination="@id/countryFragment" />
-
-        <!-- Burada argument'ı ekliyoruz. ArgType'ı ve defaultValue'yi gereksinimlerinize göre değiştirebilirsiniz. -->
-
     </fragment>
+
     <fragment
         android:id="@+id/countryFragment"
         android:name="com.example.countryappkotlin.view.CountryFragment"
         android:label="fragment_country"
         tools:layout="@layout/fragment_country" >
+
         <action
             android:id="@+id/action_countryFragment_to_feedFragment"
             app:destination="@id/feedFragment" />

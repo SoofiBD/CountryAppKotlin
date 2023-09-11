@@ -14,9 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:importantForAccessibility="no"
+        android:minHeight="200dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_launcher_background"
-        android:minHeight="200dp">
+        tools:ignore="ImageContrastCheck">
     </ImageView>
 
     <TextView
@@ -47,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/countryCapital"
-        android:text="Country Region"
+        android:text="@string/country_region"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp">
@@ -58,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/countryRegion"
-        android:text="Country Currency"
+        android:text="@string/country_currency"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp">
@@ -69,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/countryCurrency"
-        android:text="Country Language"
+        android:text="@string/country_language"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp">
