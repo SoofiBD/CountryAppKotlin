@@ -10,9 +10,17 @@
         android:name="com.example.countryappkotlin.view.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
+
+        <argument
+            android:name="countryUuid"
+            app:argType="integer" />
+
         <action
             android:id="@+id/action_feedFragment_to_countryFragment"
             app:destination="@id/countryFragment" />
+
+        <!-- Burada argument'ı ekliyoruz. ArgType'ı ve defaultValue'yi gereksinimlerinize göre değiştirebilirsiniz. -->
+
     </fragment>
     <fragment
         android:id="@+id/countryFragment"
