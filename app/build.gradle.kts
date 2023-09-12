@@ -59,4 +59,19 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("io.reactivex.rxjava3:rxjava:3.1.3")
+    implementation ("com.google.code.gson:gson:2.8.8") // 2.8.8 en son sürüm olabilir, daha yeni bir sürüm varsa onu kullanabilirsiniz.
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+
+    val room_version = "2.5.2"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
 }

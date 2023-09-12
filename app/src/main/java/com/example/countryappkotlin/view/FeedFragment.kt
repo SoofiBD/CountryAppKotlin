@@ -44,9 +44,8 @@ class FeedFragment : Fragment() {
         viewModel.countryLiveData.observe(viewLifecycleOwner) { country ->
             country?.let {
 
-
-
-            //binding.countryName.text = country.countryName
+                
+                //binding.countryName.text = country.countryName
                 //binding.countryCapital.text = country.countryCapital
                 //binding.countryRegion.text = country.countryRegion
                 //binding.countryCurrency.text = country.countryCurrency

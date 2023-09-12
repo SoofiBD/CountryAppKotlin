@@ -37,6 +37,14 @@ class CountryFragment : Fragment() {
         binding.countryList.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
         binding.countryList.adapter = countryAdapter
 
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            binding.countryList.visibility = View.GONE
+            binding.errorMessage.visibility = View.GONE
+            binding.progressBarCountry.visibility = View.VISIBLE
+            viewModel.refreshData()
+            binding.swipeRefreshLayout.isRefreshing = false
+        }
+
         observeLiveData()
     }
 
