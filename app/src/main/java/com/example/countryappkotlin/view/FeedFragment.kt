@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 
 import com.example.countryappkotlin.databinding.FragmentFeedBinding
+import com.example.countryappkotlin.util.downloadFromUrl
+import com.example.countryappkotlin.util.placeHolderProgressBar
 import com.example.countryappkotlin.viewModel.FeedViewModel
 
 class FeedFragment : Fragment() {
@@ -30,12 +32,14 @@ class FeedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(FeedViewModel::class.java)
-        viewModel.getDataFromRoom()
-
         arguments?.let {
             countryUuid = FeedFragmentArgs.fromBundle(it).countryUuid
         }
+
+        viewModel = ViewModelProvider(this).get(FeedViewModel::class.java)
+        viewModel.getDataFromRoom(countryUuid!!)
+
+
 
         observeLiveData()
     }
@@ -45,13 +49,12 @@ class FeedFragment : Fragment() {
             country?.let {
 
                 
-                //binding.countryName.text = country.countryName
-                //binding.countryCapital.text = country.countryCapital
-                //binding.countryRegion.text = country.countryRegion
-                //binding.countryCurrency.text = country.countryCurrency
-                //binding.countryLanguage.text = country.countryLanguage
-                // Eğer downloadFromUrl ve placeHolderProgressBar fonksiyonları tanımlıysa, bu satırı uygun şekilde düzenleyin.
-                // binding.countryImageView.downloadFromUrl(country.countryImage, placeHolderProgressBar(requireContext()))
+                binding.countryName.text = country.countryName
+                binding.countryCapital.text = country.countryCapital
+                binding.countryRegion.text = country.countryRegion
+                binding.countryCurrency.text = country.countryCurrency
+                binding.countryLanguage.text = country.countryLanguage
+                binding.countryImageView.downloadFromUrl(country.imageUrl, placeHolderProgressBar(requireContext()))
             }
         }
     }

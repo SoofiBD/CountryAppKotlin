@@ -30,11 +30,10 @@ class CountryAdapter(val countryList : ArrayList<Model>) : RecyclerView.Adapter<
         holder.binding.countryName.text = countryList[position].countryName
         holder.binding.countryCapital.text = countryList[position].countryCapital
 
-        holder.itemView.setOnClickListener {
-            val action = FeedFragmentDirections.actionFeedFragmentToCountryFragment()
+        holder.binding.imageView.setOnClickListener {
+            val action = FeedFragmentDirections.actionFeedFragmentToCountryFragment(countryList[position].uuid)
             Navigation.findNavController(it).navigate(action)
         }
-
         holder.binding.imageView.downloadFromUrl(countryList[position].imageUrl, placeHolderProgressBar(holder.itemView.context))
     }
 

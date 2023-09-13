@@ -41,7 +41,7 @@ class CountryFragment : Fragment() {
             binding.countryList.visibility = View.GONE
             binding.errorMessage.visibility = View.GONE
             binding.progressBarCountry.visibility = View.VISIBLE
-            viewModel.refreshData()
+            viewModel.refreshFromAPI()
             binding.swipeRefreshLayout.isRefreshing = false
         }
 
